@@ -100,5 +100,9 @@
   <ItemGroup>
     <None Include="imgs\icon_browser.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="modelos\*"
+          CopyToOutputDirectory="Always" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
