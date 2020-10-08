@@ -50,7 +50,7 @@
             this.Controls.Add(this.txt_code);
             this.Name = "Code";
             this.Text = "Code";
-            this.Deactivate += new System.EventHandler(this.Code_Deactivate);
+            this.VisibleChanged += new System.EventHandler(this.Code_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

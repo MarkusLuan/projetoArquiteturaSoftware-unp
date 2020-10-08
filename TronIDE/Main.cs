@@ -22,16 +22,8 @@ namespace TronIDE
         {
             string modelo = File.ReadAllText(@"C:\Users\marku\Documents\projetos\VisualStudio Projs\TronIDE\TronIDE\modelos\web.py");
 
-            Form novoWeb = new NovoWeb();
+            Form novoWeb = new NovoWeb(modelo);
             novoWeb.ShowDialog();
-            novoWeb.Activate();
-
-            return;
-
-            Form code = new Code(modelo);
-            code.Show();
-            code.Activate(); // Ativa o Foco
-            this.Hide();
         }
     }
 }
