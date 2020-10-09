@@ -31,7 +31,7 @@ namespace TronIDE
 
         private void bt_web_Click(object sender, EventArgs e)
         {
-            string modelo = File.ReadAllText(@"C:\Users\marku\Documents\projetos\VisualStudio Projs\TronIDE\TronIDE\modelos\web.py");
+            string modelo = File.ReadAllText(@"modelos\web.py");
 
             Form novoWeb = new NovoWeb(modelo);
             novoWeb.ShowDialog();

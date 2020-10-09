@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.txt_code = new System.Windows.Forms.TextBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.SuspendLayout();
             // 
             // txt_code
@@ -36,21 +38,29 @@
             this.txt_code.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_code.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_code.ForeColor = System.Drawing.Color.Red;
-            this.txt_code.Location = new System.Drawing.Point(12, 12);
+            this.txt_code.Location = new System.Drawing.Point(152, 12);
             this.txt_code.Multiline = true;
             this.txt_code.Name = "txt_code";
-            this.txt_code.Size = new System.Drawing.Size(776, 426);
+            this.txt_code.Size = new System.Drawing.Size(636, 426);
             this.txt_code.TabIndex = 0;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(12, 12);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(124, 426);
+            this.treeView1.TabIndex = 1;
             // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.txt_code);
             this.Name = "Code";
             this.Text = "Code";
-            this.VisibleChanged += new System.EventHandler(this.Code_VisibleChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Code_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,5 +69,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txt_code;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
