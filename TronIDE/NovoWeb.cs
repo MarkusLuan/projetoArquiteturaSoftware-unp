@@ -12,13 +12,22 @@ namespace TronIDE
 {
     public partial class NovoWeb : Form
     {
+        private SeleniumDown seleniumDown = new SeleniumDown();
+        private List<Version> versoes;
         private string modelo;
 
         public NovoWeb(string modelo)
         {
             this.modelo = modelo;
+            versoes = seleniumDown.versoes;
+
+            //Limitar as 10 ultimas versões
+            versoes = versoes.GetRange((versoes.Count() - 10), 10);
 
             InitializeComponent();
+         
+            sel_versao.Items.Clear();
+            sel_versao.Items.AddRange(versoes.ToArray());
         }
 
         private void bt_pasta_Click(object sender, EventArgs e)
