@@ -30,12 +30,38 @@ namespace TronIDE
             }
         }
 
+        private bool camposInvalidos
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(txt_nomeProjeto.Text))
+                {
+                    MessageBox.Show("O nome do projeto não pode ser vazio");
+                    txt_nomeProjeto.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txt_pasta.Text))
+                {
+                    MessageBox.Show("A pasta não pode ser vazio");
+                    txt_pasta.Focus();
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
         private void bt_iniciarProjeto_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (camposInvalidos)
+            {
+                return;
+            }
 
             Form main = new Main();
             main.Hide();
+            this.Close();
 
             Form code = new Code(modelo);
             code.Show();
