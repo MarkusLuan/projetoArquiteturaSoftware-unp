@@ -1,4 +1,4 @@
-from selenium import webdriver
+﻿from selenium import webdriver
 
 drv = None
 def init():
@@ -9,5 +9,5 @@ def init():
 
 init()
 
-#Exemplo de c�digo
+#Exemplo de código
 drv.get("http://google.com.br")
