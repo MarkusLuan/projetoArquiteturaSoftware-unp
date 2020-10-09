@@ -19,15 +19,11 @@ namespace TronIDE
             txt_code.Text = modelo;
         }
 
-        private void Code_VisibleChanged(object sender, EventArgs e)
+        private void Code_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!Visible)
-            {
-                Form main = new Main();
-                main.Show();
-                main.Activate();
-                this.Close();
-            }
+            Form main = Main.getInstance();
+            main.Show();
+            main.Activate();
         }
     }
 }

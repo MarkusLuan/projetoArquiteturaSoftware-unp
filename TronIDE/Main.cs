@@ -13,9 +13,20 @@ namespace TronIDE
 {
     public partial class Main : Form
     {
+        private static Form instancia;
+
         public Main()
         {
+            instancia = this;
+
             InitializeComponent();
+        }
+
+        public static Form getInstance()
+        {
+            if (instancia == null) instancia = new Main();
+
+            return instancia;
         }
 
         private void bt_web_Click(object sender, EventArgs e)

@@ -59,7 +59,7 @@ namespace TronIDE
                 return;
             }
 
-            Form main = new Main();
+            Form main = Main.getInstance();
             main.Hide();
             this.Close();
 
