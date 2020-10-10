@@ -86,8 +86,20 @@ namespace TronIDE
                 return;
             }
 
-            seleniumDown.baixarDriver((Version) sel_versao.SelectedItem, projeto.getPasta());
+            bool baixouSelenium = seleniumDown.baixarDriver((Version) sel_versao.SelectedItem, projeto.getPasta());
+            if (!baixouSelenium)
+            {
+                return;
+            }
 
+            try
+            {
+                File.WriteAllText(projeto.getPasta() + @"\main.py", projeto.getModelo());
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar arquivo main.py\n" + ex.Message);
+                return;
+            }
 
             Form main = Main.getInstance();
             main.Hide();

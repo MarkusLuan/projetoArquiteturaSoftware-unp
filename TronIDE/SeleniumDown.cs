@@ -13,7 +13,6 @@ namespace TronIDE
 {
     class SeleniumDown
     {
-        private Version versaoSelecionada;
         private string url = "https://chromedriver.storage.googleapis.com/";
 
         public List<Version> versoes
