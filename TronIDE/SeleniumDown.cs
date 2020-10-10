@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -62,9 +64,16 @@ namespace TronIDE
             try
             {
                 string linkDownload = url + versao + "/chromedriver_win32.zip";
+                string caminhoZip = Path.GetTempPath() + @"\chromedriver.zip";
 
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile(linkDownload, pasta + @"\chromedriver.zip");
+                webClient.DownloadFile(linkDownload, caminhoZip);
+                
+                // Extrair e fechar o arquivo
+                using (ZipArchive zip = ZipFile.Open(caminhoZip, ZipArchiveMode.Read))
+                {
+                    zip.ExtractToDirectory(pasta);
+                }
 
                 return true;
             }catch(Exception e)
@@ -73,6 +82,5 @@ namespace TronIDE
                 return false;
             }
         }
-
     }
 }
