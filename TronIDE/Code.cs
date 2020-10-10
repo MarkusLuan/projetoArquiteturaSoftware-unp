@@ -15,10 +15,12 @@ namespace TronIDE
     public partial class Code : Form
     {
         private Projeto projeto;
+        private string arquivoSelecionado;
 
         public Code(Projeto projeto)
         {
             this.projeto = projeto;
+            arquivoSelecionado = projeto.getPasta() + @"\main.py";
 
             InitializeComponent();
             Text = projeto.getNome() + " - Code";
@@ -75,6 +77,7 @@ namespace TronIDE
 
             txt_code.Text = "";
             txt_code.Text = File.ReadAllText(noAtual.FullPath);
+            arquivoSelecionado = noAtual.FullPath;
         }
 
         private void btExecutar_Click(object sender, EventArgs e)
@@ -89,6 +92,16 @@ namespace TronIDE
             Process process = new Process();
             process.StartInfo = proInfo;
             process.Start();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(arquivoSelecionado, txt_code.Text);
+        }
+
+        private void btResetar_Click(object sender, EventArgs e)
+        {
+            txt_code.Text = projeto.getModelo();
         }
     }
 }

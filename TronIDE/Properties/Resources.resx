@@ -127,6 +127,9 @@
   <data name="icon_wale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icon_wale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_star_wars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icon_star_wars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_browser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icon_browser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,7 +139,7 @@
   <data name="icon_android" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\icon_android.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_star_wars" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\icon_star_wars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\icon_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

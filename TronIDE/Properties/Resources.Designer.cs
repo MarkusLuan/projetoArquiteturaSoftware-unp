@@ -113,6 +113,16 @@ namespace TronIDE.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_save {
+            get {
+                object obj = ResourceManager.GetObject("icon_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_star_wars {
             get {
                 object obj = ResourceManager.GetObject("icon_star_wars", resourceCulture);
