@@ -63,6 +63,16 @@ namespace TronIDE.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_android {
+            get {
+                object obj = ResourceManager.GetObject("icon_android", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_browser {
             get {
                 object obj = ResourceManager.GetObject("icon_browser", resourceCulture);
@@ -76,6 +86,46 @@ namespace TronIDE.Properties {
         internal static System.Drawing.Bitmap icon_execute {
             get {
                 object obj = ResourceManager.GetObject("icon_execute", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_robo1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_robo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_robo2 {
+            get {
+                object obj = ResourceManager.GetObject("icon_robo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_star_wars {
+            get {
+                object obj = ResourceManager.GetObject("icon_star_wars", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_wale {
+            get {
+                object obj = ResourceManager.GetObject("icon_wale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

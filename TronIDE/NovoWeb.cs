@@ -26,6 +26,7 @@ namespace TronIDE
             versoes = versoes.GetRange((versoes.Count() - 10), 10);
 
             InitializeComponent();
+            Text = "Novo Projeto Web";
          
             sel_versao.Items.Clear();
             sel_versao.Items.AddRange(versoes.ToArray());

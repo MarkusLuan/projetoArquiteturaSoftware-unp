@@ -111,6 +111,15 @@
   <ItemGroup>
     <None Include="modelos\*" CopyToOutputDirectory="Always" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\icon_star_wars.png" />
+    <None Include="imgs\icon_robo2.png" />
+    <None Include="imgs\icon_robo1.png" />
+    <None Include="imgs\icon_android.png" />
     <Content Include="imgs\icon_execute.png" />
+    <Content Include="imgs\icon_robo1.jpg" />
+    <Content Include="imgs\icon_robo2.jpg" />
+    <Content Include="imgs\icon_wale.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

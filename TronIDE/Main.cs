@@ -20,6 +20,7 @@ namespace TronIDE
             instancia = this;
 
             InitializeComponent();
+            Text = "TronIDE";
         }
 
         public static Form getInstance()
