@@ -28,6 +28,7 @@ namespace TronIDE
          
             sel_versao.Items.Clear();
             sel_versao.Items.AddRange(versoes.ToArray());
+            sel_versao.SelectedItem = versoes.Last();
         }
 
         private void bt_pasta_Click(object sender, EventArgs e)
