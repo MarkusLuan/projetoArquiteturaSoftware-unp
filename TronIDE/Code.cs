@@ -13,16 +13,16 @@ namespace TronIDE
 {
     public partial class Code : Form
     {
-        public Code(string modelo)
+        public Code(Projeto projeto)
         {
             InitializeComponent();
 
-            txt_code.Text = modelo;
+            txt_code.Text = projeto.getModelo();
 
             imageList1.Images.Add(Image.FromFile(@"imgs\icon_folder.png"));
             imageList1.Images.Add(Image.FromFile(@"imgs\icon_file.png"));
 
-            DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\marku\Documents\projetos\Android");
+            DirectoryInfo directoryInfo = new DirectoryInfo(projeto.getPasta());
             if (directoryInfo.Exists)
             {
                 BuildTree(directoryInfo, null);

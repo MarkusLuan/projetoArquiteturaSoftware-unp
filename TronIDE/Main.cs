@@ -32,8 +32,9 @@ namespace TronIDE
         private void bt_web_Click(object sender, EventArgs e)
         {
             string modelo = File.ReadAllText(@"modelos\web.py", Encoding.UTF8);
+            Projeto projeto = new Projeto(modelo);
 
-            Form novoWeb = new NovoWeb(modelo);
+            Form novoWeb = new NovoWeb(projeto);
             novoWeb.ShowDialog();
         }
     }

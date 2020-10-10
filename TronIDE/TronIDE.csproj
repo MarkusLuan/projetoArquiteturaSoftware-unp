@@ -65,6 +65,7 @@
       <DependentUpon>NovoWeb.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Projeto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumDown.cs" />
     <EmbeddedResource Include="Code.resx">

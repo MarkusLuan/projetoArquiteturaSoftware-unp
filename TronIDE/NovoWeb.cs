@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,11 @@ namespace TronIDE
     {
         private SeleniumDown seleniumDown = new SeleniumDown();
         private List<Version> versoes;
-        private string modelo;
+        private Projeto projeto;
 
-        public NovoWeb(string modelo)
+        public NovoWeb(Projeto projeto)
         {
-            this.modelo = modelo;
+            this.projeto = projeto;
             versoes = seleniumDown.versoes;
 
             //Limitar as 10 ultimas versões
@@ -69,11 +70,30 @@ namespace TronIDE
                 return;
             }
 
+            projeto.setNome(txt_nomeProjeto.Text);
+            projeto.setPasta(txt_pasta.Text);
+
+            try
+            {
+                if (!Directory.Exists(projeto.getPasta()))
+                {
+                    Directory.CreateDirectory(projeto.getPasta());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro: Não foi possivel criar a pasta");
+                return;
+            }
+
+            seleniumDown.baixarDriver((Version) sel_versao.SelectedItem, projeto.getPasta());
+
+
             Form main = Main.getInstance();
             main.Hide();
             this.Close();
 
-            Form code = new Code(modelo);
+            Form code = new Code(projeto);
             code.Show();
             code.Activate(); // Ativa o Foco
         }

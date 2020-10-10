@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace TronIDE
@@ -52,6 +54,23 @@ namespace TronIDE
                 }
 
                 return lista;
+            }
+        }
+
+        public bool baixarDriver(Version versao, string pasta)
+        {
+            try
+            {
+                string linkDownload = url + versao + "/chromedriver_win32.zip";
+
+                WebClient webClient = new WebClient();
+                webClient.DownloadFile(linkDownload, pasta + @"\chromedriver.zip");
+
+                return true;
+            }catch(Exception e)
+            {
+                MessageBox.Show("Erro ao fazer download do webdriver\n" + e.Message);
+                return false;
             }
         }
 
