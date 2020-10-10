@@ -19,6 +19,9 @@ namespace TronIDE
 
             txt_code.Text = modelo;
 
+            imageList1.Images.Add(Image.FromFile(@"imgs\icon_folder.png"));
+            imageList1.Images.Add(Image.FromFile(@"imgs\icon_file.png"));
+
             DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\marku\Documents\projetos\Android");
             if (directoryInfo.Exists)
             {
@@ -43,8 +46,13 @@ namespace TronIDE
 
             foreach (FileInfo file in dir.GetFiles())
             {
-                node.Nodes.Add(file.Name);
+                TreeNode tmpNode = node.Nodes.Add(file.Name);
+                tmpNode.ImageIndex = 1; //Icone de arquivo
+                tmpNode.SelectedImageIndex = 1; //Icone de arquivo
             }
+
+            node.ImageIndex = 0; //Icone de pasta
+            node.SelectedImageIndex = 0; //Icone de pasta
         }
 
         private void Code_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +60,11 @@ namespace TronIDE
             Form main = Main.getInstance();
             main.Show();
             main.Activate();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }
