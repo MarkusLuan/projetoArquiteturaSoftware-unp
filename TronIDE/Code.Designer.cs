@@ -32,6 +32,8 @@
             this.txt_code = new System.Windows.Forms.TextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.bt_executar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_executar)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_code
@@ -54,7 +56,7 @@
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(176, 426);
             this.treeView1.TabIndex = 1;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
             // imageList1
             // 
@@ -62,16 +64,30 @@
             this.imageList1.ImageSize = new System.Drawing.Size(20, 20);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // bt_executar
+            // 
+            this.bt_executar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_executar.Image = global::TronIDE.Properties.Resources.icon_execute;
+            this.bt_executar.Location = new System.Drawing.Point(129, 447);
+            this.bt_executar.Name = "bt_executar";
+            this.bt_executar.Size = new System.Drawing.Size(47, 34);
+            this.bt_executar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_executar.TabIndex = 2;
+            this.bt_executar.TabStop = false;
+            this.bt_executar.Click += new System.EventHandler(this.btExecutar_Click);
+            // 
             // Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 463);
+            this.ClientSize = new System.Drawing.Size(934, 490);
+            this.Controls.Add(this.bt_executar);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.txt_code);
             this.Name = "Code";
             this.Text = "Code";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Code_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.bt_executar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +98,6 @@
         private System.Windows.Forms.TextBox txt_code;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox bt_executar;
     }
 }

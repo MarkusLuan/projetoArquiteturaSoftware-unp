@@ -111,5 +111,6 @@
   <ItemGroup>
     <None Include="modelos\*" CopyToOutputDirectory="Always" />
   </ItemGroup>
+    <Content Include="imgs\icon_execute.png" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

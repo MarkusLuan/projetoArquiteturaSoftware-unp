@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,9 +14,14 @@ namespace TronIDE
 {
     public partial class Code : Form
     {
+        private Projeto projeto;
+
         public Code(Projeto projeto)
         {
+            this.projeto = projeto;
+
             InitializeComponent();
+            Text = projeto.getNome() + " - Code";
 
             txt_code.Text = projeto.getModelo();
 
@@ -62,9 +68,27 @@ namespace TronIDE
             main.Activate();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void treeView1_DoubleClick(object sender, EventArgs e)
         {
+            TreeNode noAtual = treeView1.SelectedNode;
+            if (!noAtual.Text.EndsWith(".py")) return;
 
+            txt_code.Text = "";
+            txt_code.Text = File.ReadAllText(noAtual.FullPath);
+        }
+
+        private void btExecutar_Click(object sender, EventArgs e)
+        {
+            string cmd = "cd \"" + projeto.getPasta() + "\" " +
+                " && python main.py";
+
+            ProcessStartInfo proInfo = new ProcessStartInfo();
+            proInfo.FileName = "cmd";
+            proInfo.Arguments = "/c " + cmd;
+
+            Process process = new Process();
+            process.StartInfo = proInfo;
+            process.Start();
         }
     }
 }
